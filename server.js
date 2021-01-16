@@ -1,6 +1,14 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 500
+const port = process.env.PORT || 500;
+const connectDB = require('./config/db');
+
+//connect db
+
+connectDB()
+
+//init middleware
+app.use(express.json({extended:false}))
 
 app.get('/', (req,res) => res.json({msg: 'welcome to the contact keeper api'}))
 
