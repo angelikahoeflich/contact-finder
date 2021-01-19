@@ -1,5 +1,6 @@
 {
-  "mongoURI": "mongodb+srv://Angelika123:Cymucsyu1@contactkeeper.qobwr.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://Angelika123:Cymucsyu1@contactkeeper.qobwr.mongodb.net/<dbname>?retryWrites=true&w=majority",
 
+"jwtSecret": "secret"
 
 }
