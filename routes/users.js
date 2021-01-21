@@ -17,7 +17,7 @@ router.post('/', [
 ],async (req,res) => {
   const errors = validationResult(req)
   if(!errors.isEmpty()){
-    return res.status(400).json({errors: errors.errors.array()})
+    return res.status(400).json({errors: errors.array()})
   }
 
   const { name, email, password} = req.body;
@@ -32,7 +32,7 @@ router.post('/', [
       email,
       password
     })
-    const salt = await bcrypt.getSalt(10);
+    const salt = await bcrypt.genSalt(10);
 
     user.password = await bcrypt.hash(password, salt);
 
