@@ -4,9 +4,11 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './Components/Pages/Home'
 import About from './Components/Pages/About'
 import Navbar from './Components/Layout/Navbar'
+import ContactState from './Context/Contact/ContactState'
 
 const App = ()  => {
   return (
+    <ContactState>
     <Router>
     <Fragment className="App">
      <Navbar/>
@@ -18,6 +20,7 @@ const App = ()  => {
      </div>
     </Fragment>
     </Router>
+    </ContactState>
   );
 }
 
