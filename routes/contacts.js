@@ -9,11 +9,12 @@ const Contact = require('../models/Contact');
 //@desc Get all users contacts
 //@access Private
 router.get('/', auth, async (req,res) => {
+  
   try {
     const contacts = await Contact.find({user: req.user.id}).sort({date: -1});
     res.json(contacts)
   } catch (err) {
-    console.error(err.message)
+    console.log(err)
     res.status(500).send('server error')
   }
 })
@@ -40,7 +41,7 @@ router.post('/', [auth,  [
     const contact = await newContact.save();
     res.json(contact)
   } catch (err) {
-    console.error(err.message);
+    console.log(err);
     res.status(500).send('server error')
   }
 })

@@ -13,6 +13,7 @@ const config = require('config')
 //@access Private
 
 router.get('/', auth, async (req,res) => {
+  console.log("req.body:", req.body);
   try {
     const user = await User.findById(req.user.id).select('-password');
     res.json(user)
@@ -29,6 +30,7 @@ router.post('/', [
   check('email', 'please include a valid email').isEmail(),
   check('password', 'password is required').exists()
 ], async (req,res) => {
+  console.log("req.body:", req.body);
   const errors = validationResult(req)
   if(!errors.isEmpty()){
     return res.status(400).json({errors: errors.errors.array()})
