@@ -23,9 +23,16 @@ const ContactState = props => {
         type: "personal"
       },
       {
-        id:2,
+        id:3,
         name:"bobby",
-        email: "bobby@test.com",
+        email: "angelika@test.com",
+        phone: "1234543",
+        type: "professional"
+      },
+      {
+        id:2,
+        name:"hello",
+        email: "hello@test.com",
         phone: "6543245",
         type: "personal"
       }
@@ -49,10 +56,10 @@ const ContactState = props => {
   // Clear filter 
 
   return (
-    <ContactContent.Provider>
+    <ContactContent.Provider 
       value={{
         contacts: state.contacts
-      }}
+      }}>
       {props.children}
     </ContactContent.Provider>
   )
