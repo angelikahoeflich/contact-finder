@@ -5,9 +5,11 @@ import Home from './Components/Pages/Home'
 import About from './Components/Pages/About'
 import Navbar from './Components/Layout/Navbar'
 import ContactState from './Context/Contact/ContactState'
+import AuthState from './Context/Auth/AuthState'
 
 const App = ()  => {
   return (
+    <AuthState>
     <ContactState>
     <Router>
     <Fragment className="App">
@@ -21,6 +23,7 @@ const App = ()  => {
     </Fragment>
     </Router>
     </ContactState>
+    </AuthState>
   );
 }
 
