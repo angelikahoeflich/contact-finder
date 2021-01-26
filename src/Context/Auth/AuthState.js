@@ -39,7 +39,7 @@ const AuthState = props => {
 
 
   return (
-    <AuthContent.Provider 
+    <AuthContext.Provider 
       value={{
         token:state.token,
         isAuthenticated:state.isAuthenticated,
@@ -48,7 +48,7 @@ const AuthState = props => {
         error:state.error,
       }}>
       {props.children}
-    </AuthContent.Provider>
+    </AuthContext.Provider>
   )
 }
 
